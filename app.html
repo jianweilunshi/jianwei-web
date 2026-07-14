@@ -3397,6 +3397,7 @@ async function runLiuyaoNum(){
   const r=await E.castByNumbers(+$('#ly-1').value,+$('#ly-2').value,+$('#ly-3').value,E.nowDT());
   $('#ly-out').innerHTML=renderLiuyao(r);
   if(typeof decorate==='function') decorate('ly-out');
+}catch(e){ if(typeof uiShowError==='function') uiShowError('ly-out','六爻起卦',e); else console.error(e); }
 }
 let COIN_CAST={bits:[],moving:[],round:0,busy:false};
 function startLiuyaoCoinShake(){
@@ -3549,6 +3550,7 @@ async function runMeihua(dongOverride,timeMeta){
   h+=jfTopics(['梅花']);
   $('#mh-out').innerHTML=h;
   if(typeof decorate==='function') decorate('mh-out');
+}catch(e){ if(typeof uiShowError==='function') uiShowError('mh-out','梅花起卦',e); else console.error(e); }
 }
 
 /* —— 64卦墙 —— */
